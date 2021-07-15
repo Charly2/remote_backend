@@ -30,7 +30,8 @@ mix.webpackConfig({
             new CopyWebpackPlugin(
                 {
                     patterns: [
-                        { from: 'node_modules/materialize-css/', to: 'assets/bower/materialize/'  }
+                        { from: 'node_modules/materialize-css/', to: 'assets/bower/materialize/'  },
+                        { from: 'node_modules/jquery', to: 'assets/bower/jquery/'  },
                     ]
                 })
         ]
