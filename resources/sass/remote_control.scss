@@ -9,7 +9,7 @@ $rojo: #ED0006;
     color: $azul!important;
 }
 body{
-    background-image: url("https://wallpaperaccess.com/full/1713248.jpg");
+    background-image: url("/imgs/bg_app.jpg");
     background-size: cover;
     overflow: hidden;
     height: 100vh;
@@ -36,7 +36,6 @@ body{
         }
     }
     .items{
-        margin-right: 35px;
         height: 100%;
         display: flex;
         justify-content: center;
@@ -65,21 +64,21 @@ body{
 }
 
 .main_content{
-    width: 100vw;
-    height:100vh;
+    width: 76vw;
+    height: 90vh;
     overflow: hidden;
     margin: auto;
     position: fixed;
-    /*left: 10vw;
-    top: 5vh;*/
-    //box-shadow: 0px 0px 15px #000000;
+    left: 12vw;
+    top: 5vh;
+    box-shadow: 0px 0px 15px #000000;
     .main_section{
         height: 100%;
         background: white;
         padding-left: 0!important;
         padding-right: 0!important;
-        border-left: 5px solid $azul;
-        &:first-child{
+        border-right: 5px solid $azul;
+        &:last-child{
             border-left: 0;
         }
     }
@@ -94,10 +93,16 @@ body{
         height:60%;
         overflow-y: scroll;
         .item_live{
+            &.active{
+                background: $azul;
+                *{
+                    color: white;
+                }
+            }
             &:hover{
                 cursor: pointer;
             }
-            height: 90px;
+            min-height: 90px;
             display: flex;
             justify-content: center;
             align-content: center;
@@ -105,6 +110,9 @@ body{
             border-radius: 8px;
             .img_preview{
                 width: 40%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 .wrapper{
                     width: 90%;
                     left: 5%;
@@ -175,11 +183,11 @@ body{
                 height: 100%;
                 position: absolute;
                 z-index: 100;
+                background: black;
                 img{
                     display: block;
                     width: 100%;
                     height: 100%;
-                    border-radius: 10px;
                 }
             }
             .wrapper_text{
@@ -205,10 +213,14 @@ body{
         height: 65%;
         overflow-y: scroll;
         .item_live{
+            &.active{
+                background: #77869e75;
+                color: white;
+            }
             &:hover{
                 cursor: pointer;
             }
-            height: 90px;
+            min-height: 90px;
             display: flex;
             justify-content: center;
             align-content: center;
@@ -216,6 +228,9 @@ body{
             border-radius: 8px;
             .img_preview{
                 width: 40%;
+                display: flex;
+                justify-content: center;
+                align-content: center;
                 .wrapper{
                     width: 90%;
                     left: 5%;
@@ -320,6 +335,10 @@ body{
             width: calc(100% - 50px);
             overflow-y: scroll;
             .item_program{
+                &.active{
+                    background: $azul;
+                    color: white;
+                }
                 margin-bottom: 0;
                 padding: 5px 10px;
                 &:hover{
@@ -333,6 +352,22 @@ body{
         .program_actions{
             width: 50px;
             background: $azul;
+            padding-left: 5px;
+            .program_actions_item{
+                display: flex;
+                background: white;
+                justify-content: center;
+                align-items: center;
+                padding: 2px;
+                border: 2px solid white;
+                margin-top: 15px;
+                &:first-child{
+                    margin-top: 0;
+                }
+                i{
+                    color: $azul;
+                }
+            }
         }
     }
 
@@ -342,6 +377,62 @@ body{
         position: relative;
         box-shadow: 0px 0px 5px $azul;
         border-top: 5px solid $azul;
+        .list_song_search{
+            height: 43px;
+            background: white;
+            position: relative;
+            border-bottom: 2px solid $azul;
+            i{
+                color: $azul;
+            }
+            .list_song_search-search{
+                width: 35px;
+                height: 45px;
+                left: 0;
+                top: 0;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .list_song_search-input{
+                input{
+                    color: $gris;
+                    width: 90%;
+                    padding-left: 45px;
+                    border: none;
+                    box-shadow: none;
+                    &:focus, &:active{
+                        border: none;
+                        box-shadow: none;
+                    }
+                }
+            }
+            .list_song_search-clear{
+                width: 35px;
+                height: 45px;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                right: 0;
+                top: 0;
+            }
+        }
+        .list_song_list{
+            height: calc(100% - 50px);
+            overflow-y: scroll;
+            .list_song_list-item{
+                background: white;
+                color: $gris;
+                padding: 5px;
+                &:hover{
+                    background: $azul;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }
 
