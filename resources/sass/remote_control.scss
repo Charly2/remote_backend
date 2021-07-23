@@ -92,6 +92,15 @@ body{
         background: $gris_fondo;
         height:60%;
         overflow-y: scroll;
+        .title_prelive{
+            color: #042C5C;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
         .item_live{
             &.active{
                 background: $azul;
