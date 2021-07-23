@@ -11,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
-<body>
-<div class="row main_content  ">
+<body >
+<div class="row main_content  "  id="app" >
     <div class="col m4 main_section" id="select_section">
         <nav class="navbar_header">
             <div class="nav-wrapper">
@@ -134,6 +134,8 @@
         </div>
     </div>
 </div>
+
+<script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
 <!--JavaScript at end of body for optimized loading-->
 <script type="text/javascript" src="{{asset("js/remote_control/estrofa.js")}}"></script>
 <script type="text/javascript" src="{{asset("js/remote_control/liveViewer.js")}}"></script>
