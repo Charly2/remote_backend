@@ -2,9 +2,9 @@ export default {
     namespaced:true,
     state:{
         preLiveSong:{},
-        ApiSongs:[],
+        ListSongs:[],
         preLiveVerse:0,
-        ListSong:[
+        ProgramSong:[
             {
                 "id": 1,
                 "nombre": "Te Doy Gloria",
@@ -65,17 +65,22 @@ export default {
         setPreLiveVerse(state,payload){
             state.preLiveVerse = payload
         },
-        SET_POSTS(state, posts) {
-            console.log(posts)
-            state.ApiSongs = posts
+        SET_SONGS(state, songs) {
+            console.log(songs)
+            state.ListSongs = songs
         }
     },
     actions:{
-        getPosts({ commit }) {
-            axios.get('https://jsonplaceholder.typicode.com/posts')
+        getSongs({ commit }) {
+            axios.get('/api/v1/songs')
                 .then(response => {
-                    commit('SET_POSTS', response.data)
+                    commit('SET_SONGS', response.data.data)
                 })
+        }
+    },
+    getters:{
+        ListSongsGetters: state => {
+            return state.ListSongs
         }
     }
 }

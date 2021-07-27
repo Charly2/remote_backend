@@ -2,7 +2,7 @@
     <div class="program">
         <div class="program_list">
             <song-program-component
-                v-for="(item,index) in ListSong"
+                v-for="(item,index) in ProgramSong"
                 v-bind:id="item.id"
                 v-bind:nombre="item.nombre"
                 :key="index"
@@ -27,13 +27,13 @@ export default {
     name: "ProgramComponent",
     components: {SongProgramComponent},
     computed:{
-        ...mapState("PreliveStore",["ListSong"]),
-        ...mapState("PreliveStore",["preLiveSong"]),
+        ...mapState("PreliveStore",["ProgramSong"]),
+        ...mapState("PreliveStore",["preLiveSong"])
     },
     methods:{
         setPrelive(song){
             console.log("------"+song);
-            let searchSong = this.ListSong.find(function (item) {
+            let searchSong = this.ProgramSong.find(function (item) {
                 return item.id == song;
             });
             this.$emit("setPreliveSong",searchSong)
