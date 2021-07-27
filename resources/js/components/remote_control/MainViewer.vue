@@ -45,21 +45,15 @@ export default {
         LiveActions, PreLiveViewer, PreLiveList, PreLiveSectionActions, ListSongComponent, ProgramComponent},
     computed:{
         ...mapState("PreliveStore",["preLiveSong"]),
-        ...mapState("PreliveStore",["preLiveVerse"]),
-        ...mapState("PreliveStore",["ApiSongs"]),
-        posts() {
-            return this.$store.state.ApiSongs
-        }
+        ...mapState("PreliveStore",["preLiveVerse"])
     },
     methods:{
         ...mapMutations("PreliveStore",["setPreLiveSong"]),
         ...mapMutations("PreliveStore",["setPreLiveVerse"]),
-        ...mapActions("PreliveStore",["getPosts"]),
         setSong(song){
             this.setPreLiveSong(song);
             console.log(song.data[0]);
             this.setPreLiveVerse(0);
-            this.getPosts();
         }
     }
 }

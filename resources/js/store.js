@@ -1,5 +1,4 @@
 import PreliveStore from "./modules/Prelive"
-import PreliveActions from "./actions/PreliveActions"
 import Vue from 'vue';
 import Vuex from 'vuex';
 

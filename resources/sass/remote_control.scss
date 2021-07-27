@@ -407,9 +407,10 @@ body{
             .list_song_search-input{
                 input{
                     color: $gris;
-                    width: 90%;
+                    width: 65%;
                     padding-left: 45px;
                     border: none;
+                    display: block;
                     box-shadow: none;
                     &:focus, &:active{
                         border: none;
