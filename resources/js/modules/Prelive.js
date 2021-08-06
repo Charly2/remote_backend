@@ -2,8 +2,10 @@ export default {
     namespaced:true,
     state:{
         preLiveSong:{},
+        LiveSong:{},
         ListSongs:[],
         preLiveVerse:0,
+        LiveVerse:0,
         ProgramSong:[
             {
                 "id": 1,
@@ -62,8 +64,14 @@ export default {
         setPreLiveSong(state,payload){
             state.preLiveSong = payload
         },
+        setLiveSong(state,payload){
+            state.LiveSong = payload
+        },
         setPreLiveVerse(state,payload){
             state.preLiveVerse = payload
+        },
+        setLiveVerse(state,payload){
+            state.LiveVerse = payload
         },
         SET_SONGS(state, songs) {
             console.log(songs)

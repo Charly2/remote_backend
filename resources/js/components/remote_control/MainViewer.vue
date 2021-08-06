@@ -6,11 +6,11 @@
                     <a href="#" class="brand-logo"><img src="/imgs/logo_white.svg" alt=""></a>
                 </div>
             </nav>
-            <program-component @setPreliveSong="setSong"></program-component>
+            <program-component @setPreliveSong="setPreSong"></program-component>
             <list-song-component></list-song-component>
         </div>
         <div class="col m4 main_section" id="pre_live_section">
-            <pre-live-section-actions></pre-live-section-actions>
+            <pre-live-section-actions @setliveSong="setLiveSongEvent"></pre-live-section-actions>
             <pre-live-list></pre-live-list>
             <pre-live-viewer></pre-live-viewer>
         </div>
@@ -48,12 +48,15 @@ export default {
         ...mapState("PreliveStore",["preLiveVerse"])
     },
     methods:{
-        ...mapMutations("PreliveStore",["setPreLiveSong"]),
+        ...mapMutations("PreliveStore",["setPreLiveSong","setLiveSong"]),
         ...mapMutations("PreliveStore",["setPreLiveVerse"]),
-        setSong(song){
+        setPreSong(song){
             this.setPreLiveSong(song);
             console.log(song.data[0]);
             this.setPreLiveVerse(0);
+        },
+        setLiveSongEvent(){
+            this.setLiveSong(this.preLiveSong)
         }
     }
 }
